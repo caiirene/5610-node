@@ -8,9 +8,9 @@ import ModuleRoutes from "./modules/routes.js";
 import UserRoutes from "./users/routes.js";
 import cors from "cors";
 import mongoose from "mongoose";
-// const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas' || 'mongodb+srv://caiirene:Caiailin1998@cluster5610.845pk72.mongodb.net/?retryWrites=true&w=majority'
-// mongoose.connect(CONNECTION_STRING);
-mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas' || 'mongodb+srv://caiirene:Caiailin1998@cluster5610.845pk72.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(CONNECTION_STRING);
+// mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 import session from "express-session";
 import "dotenv/config";
 
@@ -18,8 +18,8 @@ import "dotenv/config";
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:3000",
-    origin: process.env.FRONTEND_URL
+    // origin: "http://localhost:3000",
+    origin: "http://localhost:3000"|| process.env.FRONTEND_URL
 }));
 
 const sessionOptions = {
