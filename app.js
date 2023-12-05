@@ -18,8 +18,8 @@ import "dotenv/config";
 const app = express();
 app.use(cors({
     credentials: true,
-    //origin: process.env.NODE_ENV === "production" ? process.env.FRONTEND_URL : process.env.FRONTEND_URL_LOCAL,
-     origin: 'https://a6--prismatic-kashata-ba3e8b.netlify.app/'
+    origin: process.env.NODE_ENV === "production" ? process.env.FRONTEND_URL : process.env.FRONTEND_URL_LOCAL,
+    //  origin: 'https://a6--prismatic-kashata-ba3e8b.netlify.app/'
 }));
 
 const sessionOptions = {
